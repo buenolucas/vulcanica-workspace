@@ -1,0 +1,45 @@
+{
+  "name": "vulcanica-workspace",
+  "version": "0.1.0",
+  "description": "A repo where cool things happen",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buenolucas/vulcanica-workspace.git"
+  },
+  "keywords": [
+    "tooling",
+    "ui",
+    "experimental"
+  ],
+  "author": "Lucas Bueno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buenolucas/vulcanica-workspace/issues"
+  },
+  "homepage": "https://github.com/buenolucas/vulcanica-workspace#readme",
+  "devDependencies": {
+    "turbo": "^1.0.11"
+  },
+  "turbo": {
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": [".next/**"]
+      },
+      "test": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      }
+    }
+  }
+}
